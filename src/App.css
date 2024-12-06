@@ -1,0 +1,135 @@
+.styler{
+  overflow: hidden; /* Contain children within the parent */
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.styler::before {
+    content: " ";
+    position: absolute;
+    background-color: rgb(10, 182, 171);
+    font-weight: bold;
+    display: block;
+    height: 651.22px;
+    width: 1735.05px;
+    border-radius: 50%;
+    transform: rotate(-12.77deg);
+    left: -451.38px;
+    bottom: 190.66px;
+    z-index: -100;
+
+}
+.styler::after {
+  content: " ";
+  background-color: #021526;
+  height: 594.04px;
+  width: 440.62px;
+  transform: rotate(-63.5deg);
+  position: absolute;
+  left: 1189.03px;
+  top:-288.3px;
+  z-index: -100;
+  border-radius: 50%;
+}
+
+@media screen and (max-width:1480px) {
+  .styler::before {
+    width: 1835.05px;
+    left: -551.38px;
+    bottom: 290.66px;
+
+  }
+  .styler::after {
+    height: 694.04px;
+    left: 1089.03px;
+  }
+}
+
+@media screen and (max-width:1300px) {
+  .styler::before {
+    width: 1635.05px;
+  }
+  .styler::after {
+    left: 1000px;
+  }
+}
+
+@media screen and (max-width:1150px) {
+  .styler::before {
+    width: 1535.05px;
+    height: 600.22px;
+    bottom: 330.66px;
+  }
+  .styler::after {
+    left: 900px;
+  }
+}
+
+@media screen and (max-width:1050px) {
+  .styler::before {
+    width: 1535.05px;
+    height: 600.22px;
+    bottom: 240.66px;
+  }
+  .styler::after {
+    left: 800px;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .styler::before {
+    width: 1335.05px;
+    height: 550.22px;
+    bottom: 276px;
+  }
+  .styler::after {
+    left: 700px;
+  }
+}
+
+@media screen and (max-width:770px) {
+  .styler::before {
+    width: 1235.05px;
+    height: 550.22px;
+    bottom: 230.66px;
+  }
+  .styler::after {
+    left: 630px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .styler::before {
+    width: 1235.05px;
+    height: 450.22px;
+    bottom: 230.66px;
+  }
+  .styler::after {
+    left: 330px;
+  }
+}
+
+
+@media screen and (max-width:430px) {
+  .styler::before {
+    width: 1235.05px;
+    height: 450.22px;
+    left: -751.38px;
+
+  }
+  .styler::after {
+    left: 300px;
+  }
+}
+
+@media screen and (max-width:370px) {
+  .styler::before {
+    width: 1235.05px;
+    height: 450.22px;
+    left: -851.38px;
+
+  }
+  .styler::after {
+    left: 260px;
+  }
+}
