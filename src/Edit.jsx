@@ -23,8 +23,8 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
       </div>
     );
   }
-  const [editbody,seteditbody]=useState(getedititem.body||" ")
-  const [edittoday,setedittoday]=useState(getedititem.time||" ")
+  const [editbody,seteditbody]=useState(getedititem.body||"")
+  const [edittoday,setedittoday]=useState(getedititem.time||"")
 
   let handleedit=(e)=>{
     e.preventDefault()
@@ -50,7 +50,7 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
     <>
     
         <div className='content custom'>
-            <Header ham={ham}></Header>
+            <Header ham={!ham}></Header>
             <Today curday={curday}></Today>
             
             <p className='txtadd'>Edit Your Task: {id}</p>
