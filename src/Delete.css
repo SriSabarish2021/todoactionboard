@@ -28,6 +28,9 @@
     transition-duration: 0.2s;
 
 }
+.edithome{
+    bottom: 50px;
+}
 
 @media screen and (max-width:1000px) {
     .custom{
@@ -38,6 +41,9 @@
     }
     .returndiv{
         bottom: 50px;
+    }
+    .edithome{
+        bottom: 40px;
     }
 
 }

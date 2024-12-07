@@ -49,7 +49,7 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
   return (
     <>
     
-        <div className='content'>
+        <div className='content custom'>
             <Header ham={ham}></Header>
             <Today curday={curday}></Today>
             
@@ -59,7 +59,7 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
               <input className='addinp' type="time" value={edittoday} onChange={(e)=>setedittoday(e.target.value)} placeholder='Add Time 24hour format'/>
               <button  className='subbtn' type='submit' onClick={handleedit}>Submit</button>
             </form>
-            <div className='returndiv'>
+            <div className='returndiv edithome'  >
               <button className='returnbtn' onClick={()=>returnhome()}><FaHome></FaHome></button>
             </div>
         </div>
