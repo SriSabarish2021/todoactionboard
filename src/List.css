@@ -426,16 +426,16 @@ transform: scale(0.9);
     padding-bottom: 20px;
 }
 
-@media screen and (max-height:770px) {
+@media screen and (max-width:1000px) {
     .content{
-        min-height: 510px;
-        max-height: 510px;
+        min-height: 500px;
+        max-height: 500px;
         width: 300px;
 
     }
     .listcontent{
         max-height: 300px;
-        min-height: 180px;
+        min-height: 170px;        
     }
 
 }
@@ -456,6 +456,14 @@ transform: scale(0.9);
     .remind{
         width: 270px;
     }
+    
+    .itembody{
+        font-size: 15px;
+    }
+    .itemtime{
+        font-size: 10px;
+    }
+
 }
 @media screen and (max-width:350px) {
     .content{

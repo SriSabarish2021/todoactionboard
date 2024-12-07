@@ -33,7 +33,7 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
     localStorage.setItem('items',JSON.stringify(getedit))
     const myedititem=getedit.filter((indiedititem)=>(indiedititem.id===id))
     const editdata=async()=>{
-      const editingdata=await fetch(`http://localhost:3500/items/${id}`,{
+      const editingdata=await fetch(`http://actionboard/data/db.json/items/${id}`,{
           method:'PATCH',
           headers:{
               'Content-Type':'application/json'
