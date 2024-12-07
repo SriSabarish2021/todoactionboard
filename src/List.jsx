@@ -41,7 +41,7 @@ const List = () => {
   useEffect(() => {
     let getdata=async()=>{
       try{
-        const fetchingdata=await fetch("http://actionboard/data/db.json/items")
+        const fetchingdata=await fetch("http://actionboard.netlify.app/data/db.json/items")
         if (!fetchingdata.ok) throw Error("Server is Busy Please try Later")
         let jsondata=await fetchingdata.json()
         setitems(jsondata)
@@ -70,7 +70,7 @@ let handlechange=(id)=>{
   const myitem=getchange.filter((indiitem)=>(indiitem.id===id))
   localStorage.setItem('items',JSON.stringify(getchange))
   const updatedata=async()=>{
-        const fetchingdata=await fetch(`http://actionboard/data/db.json/items/${id}`,{
+        const fetchingdata=await fetch(`http://actionboard.netlify.app/data/db.json/items/${id}`,{
             method:'PATCH',
             headers:{
                 'Content-Type':'application/json'
@@ -92,7 +92,7 @@ let handlegetdata=(e)=>{
     setitems(arrdata)
   
       let newadddata=async()=>{
-          let addingdata=await fetch("http://actionboard/data/db.json/items",{
+          let addingdata=await fetch("http://actionboard.netlify.app/data/db.json/items",{
               method:'POST',
               headers:{
                   'Content-Type':'application/json'
@@ -117,7 +117,7 @@ let handledelete=(id)=>{
 
 
       let deldata=async()=>{
-        let deletingdata=await fetch(`http://actionboard/data/db.json/items/${id}`,{
+        let deletingdata=await fetch(`http://actionboard.netlify.app/data/db.json/items/${id}`,{
             method:'DELETE'
         })
       }
