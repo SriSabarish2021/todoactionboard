@@ -32,7 +32,7 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
     setitems(getedit)
     localStorage.setItem('items',JSON.stringify(getedit))
     const myedititem=getedit.filter((indiedititem)=>(indiedititem.id===id))
-    const editdata=async()=>{
+    /* const editdata=async()=>{
       const editingdata=await fetch(`http://actionboard.netlify.app/data/db.json/items/${id}`,{
           method:'PATCH',
           headers:{
@@ -41,7 +41,7 @@ const Edit = ({showalarm,setshowalarm,alarmitem,items,setitems,ham,curday,return
           body:JSON.stringify({body:myedititem[0].body,time:myedititem[0].time})
       })
   }
-  (async () => await editdata())()
+  (async () => await editdata())() */
     navigate('/')
   }
   

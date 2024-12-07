@@ -39,21 +39,23 @@ const List = () => {
 
   // fetch data on load
   useEffect(() => {
-    let getdata=async()=>{
-      try{
-        const fetchingdata=await fetch("http://actionboard.netlify.app/data/db.json/items")
-        if (!fetchingdata.ok) throw Error("Server is Busy Please try Later")
-        let jsondata=await fetchingdata.json()
-        setitems(jsondata)
-      }catch(Error){
-        let localdata=JSON.parse(localStorage.getItem('items'))
-        setitems(localdata)
-        console.log(Error);
-      }finally{
-        setloading(false)
-      } 
-    }
-    getdata()
+    // let getdata=async()=>{
+    //   try{
+    //     const fetchingdata=await fetch("http://actionboard.netlify.app/data/db.json/items")
+    //     if (!fetchingdata.ok) throw Error("Server is Busy Please try Later")
+    //     let jsondata=await fetchingdata.json()
+    //     setitems(jsondata)
+    //   }catch(Error){
+    //     let localdata=JSON.parse(localStorage.getItem('items'))
+    //     setitems(localdata)
+    //     console.log(Error);
+    //   }finally{
+    //     setloading(false)
+    //   } 
+    // }
+    // getdata()
+    let localdata=JSON.parse(localStorage.getItem('items'))
+    setitems(localdata)
   return () => {
     setitems([])
   }
@@ -69,16 +71,16 @@ let handlechange=(id)=>{
   setitems(getchange)
   const myitem=getchange.filter((indiitem)=>(indiitem.id===id))
   localStorage.setItem('items',JSON.stringify(getchange))
-  const updatedata=async()=>{
-        const fetchingdata=await fetch(`http://actionboard.netlify.app/data/db.json/items/${id}`,{
-            method:'PATCH',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify({checked:myitem[0].checked})
-        })
-    }
-    (async () => await updatedata())()
+  // const updatedata=async()=>{
+  //       const fetchingdata=await fetch(`http://actionboard.netlify.app/data/db.json/items/${id}`,{
+  //           method:'PATCH',
+  //           headers:{
+  //               'Content-Type':'application/json'
+  //           },
+  //           body:JSON.stringify({checked:myitem[0].checked})
+  //       })
+  //   }
+  //   (async () => await updatedata())()
 }
 let handlegetdata=(e)=>{
   e.preventDefault()
@@ -91,7 +93,7 @@ let handlegetdata=(e)=>{
     localStorage.setItem('items',JSON.stringify(arrdata))
     setitems(arrdata)
   
-      let newadddata=async()=>{
+      /* let newadddata=async()=>{
           let addingdata=await fetch("http://actionboard.netlify.app/data/db.json/items",{
               method:'POST',
               headers:{
@@ -100,7 +102,7 @@ let handlegetdata=(e)=>{
               body:JSON.stringify(objdata)
           })
       }
-        newadddata()
+        newadddata() */
     setadditem('')
     settoday()
     navigate('/')
@@ -115,13 +117,13 @@ let handledelete=(id)=>{
       setitems(delarr)
       localStorage.setItem('items',JSON.stringify(delarr))
 
-
+/* 
       let deldata=async()=>{
         let deletingdata=await fetch(`http://actionboard.netlify.app/data/db.json/items/${id}`,{
             method:'DELETE'
         })
       }
-      deldata()
+      deldata() */
 
 }
 
