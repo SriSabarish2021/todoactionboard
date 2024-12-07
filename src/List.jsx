@@ -39,23 +39,22 @@ const List = () => {
 
   // fetch data on load
   useEffect(() => {
-    // let getdata=async()=>{
-    //   try{
-    //     const fetchingdata=await fetch("http://actionboard.netlify.app/data/db.json/items")
-    //     if (!fetchingdata.ok) throw Error("Server is Busy Please try Later")
-    //     let jsondata=await fetchingdata.json()
-    //     setitems(jsondata)
-    //   }catch(Error){
-    //     let localdata=JSON.parse(localStorage.getItem('items'))
-    //     setitems(localdata)
-    //     console.log(Error);
-    //   }finally{
-    //     setloading(false)
-    //   } 
-    // }
-    // getdata()
-    let localdata=JSON.parse(localStorage.getItem('items'))
-    setitems(localdata)
+    let getdata=async()=>{
+      try{
+        /* const fetchingdata=await fetch("http://actionboard.netlify.app/data/db.json/items")
+        if (!fetchingdata.ok) throw Error("Server is Busy Please try Later")
+        let jsondata=await fetchingdata.json()
+        setitems(jsondata) */
+        let localdata=await JSON.parse(localStorage.getItem('items'))
+        if (!localdata) throw Error("Server is Busy Please try Later")
+        setitems(localdata)
+      }catch(Error){
+        console.log(Error);
+      }finally{
+        setloading(false)
+      } 
+    }
+    getdata()
   return () => {
     setitems([])
   }
