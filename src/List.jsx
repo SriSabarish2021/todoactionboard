@@ -182,7 +182,7 @@ const [minites,setminites]=useState()
 
     }
   }, [itemstime])
-  greeting.addEventListener('click', function(){
+  notify.addEventListener('click', function(){
     window.open('https://actionboard.netlify.app/');
 });
  
