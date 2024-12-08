@@ -10,6 +10,7 @@ import Edit from './Edit';
 
 
 const List = () => {
+  let notify;
   // sidenav hide and show
   const [ham,setham]=useState(true)
   // fetchin items
@@ -158,7 +159,7 @@ const [minites,setminites]=useState()
     if(itemstime&& !itemstime.checked){
        Notification.requestPermission().then(perm=>{
           if(perm==="granted"){
-            let notify=new Notification("From To-Do List",{
+            notify=new Notification("From To-Do List",{
               body:`Hey Your task "${itemstime.body}" is now overdue`,
               icon:`${window.location.origin}/images/to-do-list.png`     
             })
@@ -181,7 +182,9 @@ const [minites,setminites]=useState()
 
     }
   }, [itemstime])
-  
+  greeting.addEventListener('click', function(){
+    window.open('https://actionboard.netlify.app/');
+});
  
 
 
