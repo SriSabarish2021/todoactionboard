@@ -12,7 +12,7 @@ const Listcontent = ({items,handlechange,handledelete}) => {
             <ul className='ul'>
                 {items
                   .sort((a,b)=>
-                    const timeA = new Date(`${a.time}:00`).getTime(); //
+                    const timeA = new Date(`${a.time}:00`).getTime(); // 
                     const timeB = new Date(`${b.time}:00`).getTime();
                     return timeB - timeA;
                    )
