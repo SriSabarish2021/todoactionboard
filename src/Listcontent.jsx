@@ -10,13 +10,7 @@ const Listcontent = ({items,handlechange,handledelete}) => {
     <>
       <div className='listcontent'>
             <ul className='ul'>
-                {items
-                  .sort((a,b)=>
-                    const timeA = new Date(`${a.time}:00`).getTime(); // 
-                    const timeB = new Date(`${b.time}:00`).getTime();
-                    return timeB - timeA;
-                   )
-                  .map((item)=>(
+                {items.map((item)=>(
                     <li key={item.id} className='li'>
                         <input className='checkbox' type="checkbox" checked={item.checked} onChange={()=>handlechange(item.id)}/>
                         <p style={{ textDecoration:item.checked?'line-through':'none',color:item.checked?'grey':'white',transitionDuration:'0.5s'}} className='itembody'>{item.body}</p>
