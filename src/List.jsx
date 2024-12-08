@@ -160,7 +160,7 @@ const [minites,setminites]=useState()
           if(perm==="granted"){
             let notify=new Notification("From To-Do List",{
               body:`Hey Your task "${itemstime.body}" is now overdue`,
-              icon:"/images/to-do-list.png"              
+              icon:`${window.location.origin}/images/to-do-list.png`     
             })
             setTimeout(()=>{
               notify.close()
