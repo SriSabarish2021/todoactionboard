@@ -156,6 +156,20 @@ const [minites,setminites]=useState()
   useEffect(() => {
     
     if(itemstime&& !itemstime.checked){
+      Notification.requestPermission().then(perm=>{
+          if(perm==="granted"){
+            let notify=new Notification("From To-Do List",{
+              body:`Hey Your task "${itemstime.body}" is now overdue`,
+              icon:"public/images/to-do-list.png"              
+            })
+            setTimeout(()=>{
+              notify.close()
+             },30000)
+          }
+          else if(perm==="denied"){
+            window.alert("Please Turn on your Notification")
+          }
+         })
       setalarmitem(itemstime)
       setshowalarm(!showalarm)
     }else{
